@@ -1,0 +1,3024 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			ExtentReports Library 2.41.0 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+			Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+			Documentation: http://extentreports.relevantcodes.com 
+		-->
+
+		<extent id='6c429804-47b5-44b1-b5f5-27c396412612' />
+		
+		<meta http-equiv='content-type' content='text/html; charset=UTF-8' /> 
+		<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+		<meta name='robots' content='noodp, noydir' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='extentx' id='extentx' content='' />
+		
+		<title>
+				ExtentReports 2.0
+		</title>
+		
+		<link href='./extentreports/css/css.css' type='text/css' rel='stylesheet' />
+		
+		<style>
+				
+            
+                
+            
+        
+		</style>
+	</head>
+	
+	
+	<body class='extent standard hide-overflow'>
+		<!-- nav -->
+		<nav>
+			<div class='logo-container'>
+				<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+					<span>ExtentReports</span>
+				</a>
+				<a href='#' data-activates='slide-out' class='button-collapse'><i class='fa fa-bars'></i></a>
+			</div>
+			<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+				<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='fa fa-tasks'></i>Test Details</a></li>
+				<li class='analysis waves-effect'><a href='#!' class='categories-view' onclick="_updateCurrentStage(1)"><i class='fa fa-tags'></i>Categories</a></li>
+				<li class='analysis waves-effect'><a href='#!' class='exceptions-view' onclick="_updateCurrentStage(2)"><i class='fa fa-bug'></i>Exceptions</a></li>
+				<li class='analysis waves-effect'><a href='#!' class='dashboard-view'><i class='fa fa-dashboard'></i></i>Analysis</a></li>				
+				<li class='analysis waves-effect'><a href='#!' class='testrunner-logs-view'><i class='fa fa-file-text-o'></i>TestRunner Logs</a></li>
+			</ul>
+			<span class='report-name'>Automation Report</span> <span class='report-headline'></span>
+			<ul class='right hide-on-med-and-down nav-right'>
+				<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+					<i class='fa fa-desktop'></i>
+				</li>
+				<li>
+					<span class='suite-started-time'>2017-05-10 14:44:36</span>
+				</li>
+				<li>
+					<span>v2.41.0</span>
+				</li>
+			</ul>
+		</nav>
+		<!-- /nav -->
+		
+		<!-- container -->
+		<div class='container'>
+			
+			<!-- dashboard -->
+			<div id='dashboard-view' class='row'>
+				<div class='time-totals'>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-tests'> 
+							<span class='panel-name'>Total Tests</span> 
+							<span class='total-tests'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-steps'> 
+							<span class='panel-name'>Total Steps</span> 
+							<span class='total-steps'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-current'> 
+							<span class='panel-name'>Total Time Taken (Current Run)</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 34m 10s+780ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-overall'> 
+							<span class='panel-name'>Total Time Taken (Overall)</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 34m 10s+780ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-start-time'>
+						<div class='card green-accent'> 
+							<span class='panel-name'>Start</span> 
+							<span class='panel-lead suite-started-time'>2017-05-10 14:10:25</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-end-time'>
+						<div class='card pink-accent'> 
+							<span class='panel-name'>End</span> 
+							<span class='panel-lead suite-ended-time'>2017-05-10 14:44:36</span> 
+						</div> 
+					</div>
+				</div>
+				<div class='charts'>
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Tests View</span>
+							</div> 
+							<div class='panel-setting modal-trigger test-count-setting right'>
+								<a href='#test-count-setting'><i class='fa fa-ellipsis-v'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='test-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div> 
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Steps View</span>
+							</div> 
+							<div class='panel-setting modal-trigger step-status-filter right'>
+								<a href='#step-status-filter'><i class='fa fa-ellipsis-v'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='step-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div>
+					<div class='col s12 m12 l4 fh'> 
+						<div class='card-panel'> 
+							<span class='panel-name'>Pass Percentage</span> 
+							<span class='pass-percentage panel-lead'></span> 
+							<div class='progress light-blue lighten-3'> 
+								<div class='determinate light-blue'></div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+				<div class='system-view'>
+					<div class='col l4 m12 s12'>
+						<div class='card-panel'>
+							<span class='label info outline right'>Environment</span>
+							<table>
+								<thead>
+									<tr>
+										<th>Param</th>
+										<th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+											<td>User Name</td>
+											<td>automation2</td>
+										</tr>
+										<tr>
+											<td>OS</td>
+											<td>Windows 7</td>
+										</tr>
+										<tr>
+											<td>Java Version</td>
+											<td>1.8.0_45</td>
+										</tr>
+										<tr>
+											<td>Host Name</td>
+											<td>Automation-2</td>
+										</tr>
+										<tr>
+											<td>Selenium Version</td>
+											<td>2.46</td>
+										</tr>
+										<tr>
+											<td>Environment</td>
+											<td>Automation Server</td>
+										</tr>
+										<tr>
+											<td>Application</td>
+											<td>http://fleetautomation1.azuga.com/azuga/login.html</td>
+										</tr>
+										<tr>
+											<td>Browser</td>
+											<td>chrome</td>
+										</tr>
+										<tr>
+											<td>Build</td>
+											<td>AQ3.1-ReleaseCandidate.10-05-2017-10.144</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+					<div class='category-summary-view'>
+						<div class='col l4 m6 s12'>
+							<div class='card-panel'>
+								<span class='label info outline right'>Categories</span>
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+										</tr>
+									</thead>
+									<tbody>
+											<tr>
+												<td>
+													AQ3.1-ReleaseCandidate.10-05-2017-10.144
+												</td>
+											</tr>
+											<tr>
+												<td>
+													Summary-Report
+												</td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- /dashboard -->
+			
+			<!-- tests -->
+			<div id='test-view' class='row _addedTable'>
+				<div class='col _addedCell1'>
+					<div class='contents'>
+						<div class='card-panel heading'>
+							<h5>Tests</h5>
+						</div>
+						<div class='card-panel filters'>
+							<div>
+								<a data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#' class='dropdown-button button tests-toggle'><i class='fa fa-list icon'></i></a>
+								<ul id='tests-toggle' class='dropdown-content'>
+									<li class='pass'><a href='#!'>Pass</a></li>
+									<li class='fail'><a href='#!'>Fail</a></li>
+									<li class='skip'><a href='#!'>Skip</a></li>
+									<li class='divider'></li>
+									<li class='clear'><a href='#!'>Clear Filters</a></li>
+								</ul>
+							</div>
+								<div>
+									<a data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#' class='category-toggle dropdown-button button'><i class='fa fa-tag icon'></i></a>
+									<ul id='category-toggle' class='dropdown-content'>
+											<li class='AQ3.1-ReleaseCandidate.10-05-2017-10.144'><a href='#!'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</a></li>
+											<li class='Summary-Report'><a href='#!'>Summary-Report</a></li>
+										<li class='divider'></li>
+										<li class='clear'><a href='#!'>Clear Filters</a></li>
+									</ul>
+								</div>
+							<div>
+								<a id='clear-filters' alt='Clear Filters' title='Clear Filters'><i class='fa fa-close icon'></i></a>
+							</div>
+							<div>&nbsp;&middot;&nbsp;</div>
+							<div>
+								<a id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'><i class='fa fa-pie-chart icon'></i></a>
+							</div>
+							<div>
+								<a id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters' class='enabled'><i class='fa fa-refresh icon'></i></i></a>
+							</div>
+							<div>&nbsp;&middot;</div>
+							<div class='search' alt='Search Tests' title='Search Tests'>
+								<div class='input-field left'>
+									<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+								</div>
+								<i class='fa fa-search icon'></i>
+							</div>
+						</div>
+						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+							<div class='wrapper'>
+								<ul id='test-collection' class='test-collection'>
+										<li class='collection-item test displayed active pass ' extentid='5a969082-0b85-4337-8a67-908c670ba7a2'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_verifyDownloadOfXls </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:43:54</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:44:32</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 37s+299ms</span>
+												</div>
+												<div class='test-desc'>Verify iff the xls is downloaded by clicking on it</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:43:54</td>
+																	<td class='step-details'>Genertating Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:44:02</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_43_59-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_43_59-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:44:07</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_44_03-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_44_03-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:44:32</td>
+																	<td class='step-details'>The excel is downloaded<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_44_28-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_44_28-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:44:32</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:44:32</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='0a28be77-aa88-4ada-bdee-3ced30f8e358'>
+											<div class='test-head'>
+												<span class='test-name'>Compare_DistanceTravelled_Between_Summary_And_Activity </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:42:36</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:43:54</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 18s+212ms</span>
+												</div>
+												<div class='test-desc'>Comparing Speeding Duration in betwween Summary & Activity Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:36</td>
+																	<td class='step-details'>Comparing Speeding Duration in betwween Summary & Activity Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:51</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_40-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_40-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:59</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_42_56-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_42_56-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:43:16</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_00-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_00-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:43:33</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_27-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_27-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:43:54</td>
+																	<td class='step-details'>Speed Duration is equal in summary Report & Activity Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_43-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_43_43-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:43:54</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:43:54</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='0c1182a0-5962-49ef-930b-c2cb52de043e'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_SppedingReport_VerifyCountOfSpeeding </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:41:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:42:36</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 48s+814ms</span>
+												</div>
+												<div class='test-desc'>Verifying Speeding# in summary Report & Speeding Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:41:47</td>
+																	<td class='step-details'>verifying Speeding# in summary Report & Speeding Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:03</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_51-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_51-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:10</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_42_07-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_42_07-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:42:15</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_10-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_10-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:42:30</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_27-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_42_27-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:42:36</td>
+																	<td class='step-details'><pre>expected [1] but found [2]</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:42:36</td>
+																	<td class='step-details'><pre>java.lang.AssertionError: expected [1] but found [2]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.azuga.sanitytests.reports.Summary.SummaryReport_SppedingReport_VerifyCountOfSpeeding(Summary.java:1885)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='b5b1d813-f355-4e16-b2fa-fc5a2aefea45'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Count_SA </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:40:55</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:41:47</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 52s+437ms</span>
+												</div>
+												<div class='test-desc'>Counting SA in Live Page & Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:40:55</td>
+																	<td class='step-details'>Counting SA in Live Page & Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:41:14</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_00-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_00-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:41:28</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_41_24-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_41_24-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:41:32</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_28-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_28-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:41:47</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_43-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_41_43-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:41:47</td>
+																	<td class='step-details'><pre>expected [2] but found [4]</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:41:47</td>
+																	<td class='step-details'><pre>java.lang.AssertionError: expected [2] but found [4]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.azuga.sanitytests.reports.Summary.SummaryReport_Count_SA(Summary.java:1795)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='ee172125-db46-489c-9134-95be19aafdfd'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Count_HCB </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:39:43</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:40:55</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 11s+612ms</span>
+												</div>
+												<div class='test-desc'>Counting HCB in Live Page & Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:39:43</td>
+																	<td class='step-details'>Counting HCB in Live Page & Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:39:59</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_47-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_47-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:40:22</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_40_09-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_40_09-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:40:31</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_23-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_23-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:40:50</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_42-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_42-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:40:55</td>
+																	<td class='step-details'>HB count is equal in Live Page and Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_51-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_40_51-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:40:55</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:40:55</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='025c35ec-fce7-44db-88a2-3a383f6e3bea'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Count_HB </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:38:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:39:43</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 56s+724ms</span>
+												</div>
+												<div class='test-desc'>Counting HB in Live Page & Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:38:47</td>
+																	<td class='step-details'>Counting HB in Live Page & Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:39:02</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_50-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_50-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:39:23</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_39_10-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_39_10-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:39:29</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_23-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_23-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:39:43</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_40-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_39_40-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:39:43</td>
+																	<td class='step-details'><pre>expected [1] but found [4]</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:39:43</td>
+																	<td class='step-details'><pre>java.lang.AssertionError: expected [1] but found [4]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at com.azuga.sanitytests.reports.Summary.SummaryReport_Count_HB(Summary.java:1629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='6e157d6e-685f-475c-8b99-c21a97c31226'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Generation_OneGroup </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:37:55</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:38:47</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 51s+597ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report with one Group</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:37:55</td>
+																	<td class='step-details'>Genertating Summary Report with one Group</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:38:11</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_59-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_59-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:38:23</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_38_18-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_38_18-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:38:27</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_23-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_23-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:38:40</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_36-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_36-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:38:47</td>
+																	<td class='step-details'>Generated Summary Report with one group as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_40-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_38_40-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:38:47</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:38:47</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='5ab80143-3326-4554-9626-263212ea04e3'>
+											<div class='test-head'>
+												<span class='test-name'>summary_Currency_Unit_Prefrerences </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:36:57</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:37:55</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 57s+864ms</span>
+												</div>
+												<div class='test-desc'>Genertating Daily Activity Report by changing Currency Unit prefrences </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:36:57</td>
+																	<td class='step-details'>Genertating Daily Activity Report by changing currency Unit prefrences</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:37:05</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_37_02-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_37_02-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:37:20</td>
+																	<td class='step-details'>Navigating to Admin Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_16-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_16-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:37:24</td>
+																	<td class='step-details'>Navigating to Config Page Device Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_21-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_21-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:37:29</td>
+																	<td class='step-details'>Navigating to Config Page Web Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_25-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_25-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:37:55</td>
+																	<td class='step-details'>Speed units are changed in Activity Report (VOC) generated as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_51-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_37_51-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:37:55</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:37:55</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='ede10ef5-604c-4cb2-b14e-b250ad65050e'>
+											<div class='test-head'>
+												<span class='test-name'>Summary_Distance_Unit_Prefrerences </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:35:24</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:36:57</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 32s+774ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report by changing Distance Unit prefrences </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:35:24</td>
+																	<td class='step-details'>Genertating Summary Report by changing Distance Unit prefrences</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:35:29</td>
+																	<td class='step-details'>Navigating to Live Page</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:35:39</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_35_36-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_35_36-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:35:43</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_40-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_40-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:36:00</td>
+																	<td class='step-details'>Navigating to Admin Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_56-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_56-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:36:05</td>
+																	<td class='step-details'>Navigating to Config Page Device Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_00-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_00-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:36:12</td>
+																	<td class='step-details'>Navigating to Config Page Web Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_06-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_06-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:36:57</td>
+																	<td class='step-details'>Distance units are changed in Summary Report  as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_53-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_36_53-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:36:57</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:36:57</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='ce2fde93-1a4f-4d49-a340-23b9fc6a94ed'>
+											<div class='test-head'>
+												<span class='test-name'>Summary_Fuel_Units_Prefrerences </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:33:26</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:35:24</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 58s+615ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report by changing Fuel Units prefrences </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:33:26</td>
+																	<td class='step-details'>Genertating Summary Report by changing Fuel Units prefrences</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:33:45</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_33_31-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_33_31-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:33:56</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_33_51-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_33_51-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:34:00</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_33_56-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_33_56-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:34:18</td>
+																	<td class='step-details'>Navigating to Admin Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_12-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_12-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:34:25</td>
+																	<td class='step-details'>Navigating to Config Page Device Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_18-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_18-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:34:32</td>
+																	<td class='step-details'>Navigating to Config Page Web Tab: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_26-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_34_26-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:35:09</td>
+																	<td class='step-details'>Changing the speeding Unit <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_05-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_05-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:35:24</td>
+																	<td class='step-details'>Speed units are changed  Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_19-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_35_19-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:35:24</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:35:24</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='b277820e-b6c6-4aab-a077-6ba2227e1a27'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Generation_OneVehicle </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:31:36</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:33:26</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 50s+188ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report with one vehicle</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:31:36</td>
+																	<td class='step-details'>Genertating Summary Report with one Vehicle</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:31:42</td>
+																	<td class='step-details'>Navigating to Live Page <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_39-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_39-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:33:26</td>
+																	<td class='step-details'><pre>no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='records-short']/tbody/tr[1]/td[1]/a"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=//*[@id='records-short']/tbody/tr[1]/td[1]/a}</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:33:26</td>
+																	<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='records-short']/tbody/tr[1]/td[1]/a"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=//*[@id='records-short']/tbody/tr[1]/td[1]/a}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy8.getText(Unknown Source)
+	at com.azuga.source.live.LiveSource.getFirstVehicle(LiveSource.java:682)
+	at com.azuga.sanitytests.reports.Summary.SummaryReport_Generation_OneVehicle(Summary.java:1189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='56c4ec67-274b-4ed2-a240-748e1db37de4'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Generation_31days </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:31:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:31:36</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 22s+198ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report for 31 days</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:31:13</td>
+																	<td class='step-details'>Genertating Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:31:20</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_31_17-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/Fleet%20Summary%20Report_Wed_May10_2017-14_31_17-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:31:23</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_20-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_20-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:36</td>
+																	<td class='step-details'>Generated Summary Report for 31 days as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_32-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_32-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:36</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:36</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='09ddf0bc-ad8a-445e-92b5-80c60d48e30a'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_NewReport_Button </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:30:40</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:31:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 33s+209ms</span>
+												</div>
+												<div class='test-desc'>Verifying  New Button after generating Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:40</td>
+																	<td class='step-details'>Verifying New Report after generating Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:49</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_46-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_46-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:50</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:13</td>
+																	<td class='step-details'>Generated Summary Report after clicking on back button as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_08-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_31_08-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:13</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:31:13</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='2db37ce4-fac0-428e-a2e3-3cf7910af9ad'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_Back_Button </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:30:07</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:30:40</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 33s+534ms</span>
+												</div>
+												<div class='test-desc'>Verifying  Back Button after generating Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:07</td>
+																	<td class='step-details'>Verifying Back Report after generating Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:13</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_10-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_10-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:30:13</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:30:40</td>
+																	<td class='step-details'>Generated Summary Report after clicking on back button as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_34-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_30_34-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:30:40</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:30:40</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='b4b66190-2f64-4790-a6a9-bc6735040d1f'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_To_DriverScore </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:29:28</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:30:07</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 38s+574ms</span>
+												</div>
+												<div class='test-desc'>Navagating Summary Report to Driver Score Detail Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:28</td>
+																	<td class='step-details'>Navagating Summary Report to Driver Score Detail Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:36</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_32-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_32-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:36</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:30:07</td>
+																	<td class='step-details'><pre>no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='fleetSummaryRecords']/tbody/tr[1]/td[6]/span/a"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=.//*[@id='fleetSummaryRecords']/tbody/tr[1]/td[6]/span/a}</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:30:07</td>
+																	<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='fleetSummaryRecords']/tbody/tr[1]/td[6]/span/a"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=.//*[@id='fleetSummaryRecords']/tbody/tr[1]/td[6]/span/a}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy8.getText(Unknown Source)
+	at com.azuga.source.reports.SummarySource.clickOnFirstScore(SummarySource.java:773)
+	at com.azuga.sanitytests.reports.Summary.SummaryReport_To_DriverScore(Summary.java:999)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='0917171d-e88d-4d55-a403-2f42cba567cc'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_1YearsBack_data </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:29:07</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:29:28</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 20s+966ms</span>
+												</div>
+												<div class='test-desc'>Generating Summary Report by selecting 1 years back dates </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:07</td>
+																	<td class='step-details'>Generating Summary Report by selecting 1 years back dates</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:13</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_10-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_10-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:29:14</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:28</td>
+																	<td class='step-details'>Summary Report generated as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_24-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_24-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:28</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:28</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='bcb7d521-1500-490b-9188-e4a88fc289d4'>
+											<div class='test-head'>
+												<span class='test-name'>SummaryReport_To_ActivityReport </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:28:33</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:29:07</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 33s+944ms</span>
+												</div>
+												<div class='test-desc'>Navagating Summary Report to Activity Report </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:28:33</td>
+																	<td class='step-details'>Navagating Summary Report to Activity Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:28:41</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_37-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_37-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:28:41</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:28:59</td>
+																	<td class='step-details'>Navigated Summary Report to Fleet Detail Report:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_55-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_55-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:07</td>
+																	<td class='step-details'>Navigated Fleet Summary Report to Activity Report:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_03-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_29_03-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:07</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:29:07</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='40098f54-b88d-4cd3-979f-54a1b3b0ba9f'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_FuelPackage_Enable </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:26:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:28:33</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 45s+991ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when Fuel package is enabled</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:26:47</td>
+																	<td class='step-details'>Checking summary Report Headers when Fuel package is enabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:28:24</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:28:33</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_29-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_28_29-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:28:33</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:28:33</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='34e4e5f9-8c40-4d44-bb78-7628d75d4687'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_FuelPackage_disable </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:25:11</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:26:47</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 36s+99ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when Fuel package is disabled</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:25:11</td>
+																	<td class='step-details'>Checking summary Report Headers when Fuel package is disabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:26:36</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:26:47</td>
+																	<td class='step-details'><pre>null: lists don't have the same size expected [22] but found [24]</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:26:47</td>
+																	<td class='step-details'><pre>java.lang.AssertionError: null: lists don't have the same size expected [22] but found [24]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:370)
+	at org.testng.Assert.assertEquals(Assert.java:537)
+	at org.testng.Assert.assertEquals(Assert.java:514)
+	at com.azuga.sanitytests.reports.Summary.summaryReport_FuelPackage_disable(Summary.java:773)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='f83a2e70-aac5-4412-8cdf-95c7e45f407a'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReportGeneration_Driver_Asset_Preference_Enabled </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:23:05</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:25:11</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 2m 5s+743ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report when Driver ans Asset Preference enabled </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:23:05</td>
+																	<td class='step-details'>Genertating Summary Report when Driver ans Asset Preference Enabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:23:12</td>
+																	<td class='step-details'>Navigating to Live Page</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:24:53</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_24_49-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_24_49-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:25:05</td>
+																	<td class='step-details'>Sumarry Reports Drop Down values are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_25_01-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_25_01-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:25:11</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_25_07-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_25_07-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:25:11</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:25:11</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='a0f1ee22-f33f-4675-9415-bbd69dfbf7a0'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReportGeneration_Driver_Asset_Preference_Disabled </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:20:48</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:23:05</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 2m 17s+546ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report when Driver ans Asset Preference Disabled </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:20:48</td>
+																	<td class='step-details'>Genertating Summary Report when Driver ans Asset Preference Disabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:20:52</td>
+																	<td class='step-details'>Navigating to Live Page</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:22:45</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_22_41-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_22_41-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:22:58</td>
+																	<td class='step-details'>Sumarry Reports Drop Down values are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_22_54-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_22_54-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:23:05</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_23_01-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_23_01-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:23:05</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:23:05</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='683a0efd-65d5-434c-b530-a64b8e8f1c14'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_SeatBelt_Package_enable </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:18:56</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:20:48</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 52s+200ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when SeatBlet package is enabled</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:18:56</td>
+																	<td class='step-details'>Checking summary Report Headers when SeatBlet package is enabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:20:26</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:20:33</td>
+																	<td class='step-details'>Vehicle Tag option is displayed in UI:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_20_29-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_20_29-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:20:48</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_20_41-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_20_41-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:20:48</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:20:48</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='8d4f0a37-7b4e-4884-ab85-70aa68ca8bf7'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_SeatBlet_Package_disable </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:17:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:18:56</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 42s+455ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when SeatBlet package is disableded</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:17:13</td>
+																	<td class='step-details'>Checking summary Report Headers when SeatBlet package is disableded</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:18:40</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:18:56</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_18_51-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_18_51-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:18:56</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:18:56</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='e44bc305-0bdd-4fdc-945c-0b17183832fe'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_Vehicle_Tag_Package_enable </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:15:16</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:17:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 57s+451ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when Tag(Vehicle Tag Package) package is enabled</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:15:16</td>
+																	<td class='step-details'>Checking summary Report Headers when Tag(Vehicle Tag Package) package is enabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:16:54</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:17:01</td>
+																	<td class='step-details'>Vehicle Tag option is displayed in UI:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_16_56-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_16_56-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:17:13</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_17_09-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_17_09-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:17:13</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:17:13</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='2b91215d-fe78-432d-b698-b53eab5e8985'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_Vehicle_Tag_Package_disable </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:12:58</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:15:16</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 2m 17s+766ms</span>
+												</div>
+												<div class='test-desc'>Checking summary Report Headers when Tag(Vehicle Tag Package) package is disabled</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:12:58</td>
+																	<td class='step-details'>Checking summary Report Headers when Tag(Vehicle Tag Package) package is disabled</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:14:46</td>
+																	<td class='step-details'>Navigating Reports >summary Tab and generate Report</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:15:04</td>
+																	<td class='step-details'>Vehicle Tag option is not displayed in UI:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_14_49-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_14_49-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:15:16</td>
+																	<td class='step-details'>Summary Reports Headers are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_15_12-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_15_12-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:15:16</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:15:16</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='d287ad0e-2fa6-4f72-ae91-6068133b7bfc'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_Generation_Only_TagName </span>
+												<span class='test-status label right capitalize outline fail'>fail</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:12:05</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:12:58</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 53s+45ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report by providing Tag Name</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:12:05</td>
+																	<td class='step-details'>Genertating Summary Report by providing Tag Name</td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:12:58</td>
+																	<td class='step-details'><pre>no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='records-short']//tr[1]/td[5]"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.04 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=//*[@id='records-short']//tr[1]/td[5]}</pre></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='fa fa-fa fa-times-circle-o'></i></td>
+																	<td class='timestamp'>14:12:58</td>
+																	<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='records-short']//tr[1]/td[5]"}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.04 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'Automation-2', ip: '192.168.11.169', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\Azuga\AppData\Local\Temp\scoped_dir3752_2487}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: d3cb00fdca12c27aa495bff86b91a36f
+*** Element info: {Using=xpath, value=//*[@id='records-short']//tr[1]/td[5]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy8.getText(Unknown Source)
+	at com.azuga.genricfunctions.ProjUtilLib.textDisplayed(ProjUtilLib.java:454)
+	at com.azuga.source.live.LiveSource.getFirstVehiclDate(LiveSource.java:756)
+	at com.azuga.sanitytests.reports.Summary.summaryReport_Generation_Only_TagName(Summary.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</pre></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='29008959-e2f0-4cc0-8d63-60c0aa77f1c3'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_Headers_And_DropDownList </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:10:49</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:12:05</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 15s+739ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary and comparing the headers and drop down values </div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:49</td>
+																	<td class='step-details'>Genertating Summary and comparing the headers and drop down values</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:53</td>
+																	<td class='step-details'>Navigating to Live Page</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:53</td>
+																	<td class='step-details'>Navigating to Live Page to get vehicle details</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:11:45</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_11_36-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_11_36-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:11:45</td>
+																	<td class='step-details'>Navigating to Summary Page:</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:11:57</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_11_53-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_11_53-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:12:05</td>
+																	<td class='step-details'>Summary Reports Headers and Dropdown values are Generated as Expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_12_01-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_12_01-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:12:05</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:12:05</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='eb73f530-1c9a-4b60-8a52-03ceeb301602'>
+											<div class='test-head'>
+												<span class='test-name'>summaryReport_Default </span>
+												<span class='test-status label right capitalize outline pass'>pass</span>
+												<span class='category-assigned hide  summary-report aq31-releasecandidate10-05-2017-10144'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-05-10 14:10:26</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-05-10 14:10:49</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 23s+127ms</span>
+												</div>
+												<div class='test-desc'>Genertating Summary Report</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>Summary-Report</span>
+																<span class='category text-white'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:26</td>
+																	<td class='step-details'>Genertating Summary Report</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:37</td>
+																	<td class='step-details'>Navigating to Reports Page: <a href='https://azuga-automation.s3.amazonaws.com/null_Wed_May10_2017-14_10_32-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/null_Wed_May10_2017-14_10_32-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='fa fa-fa fa-info-circle'></i></td>
+																	<td class='timestamp'>14:10:40</td>
+																	<td class='step-details'>Navigating to Summary Report<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_10_37-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_10_37-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:10:49</td>
+																	<td class='step-details'>Generated Summary Report as expected:<a href='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_10_45-IST.jpg' data-featherlight='image'><img class='report-img' src='https://azuga-automation.s3.amazonaws.com/main_Wed_May10_2017-14_10_45-IST.jpg' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:10:49</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='fa fa-fa fa-check-circle-o'></i></td>
+																	<td class='timestamp'>14:10:49</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='test-details-wrapper' class='col _addedCell2'>
+					<div class='contents'>
+						<div class='card-panel details-view'>
+							<h5 class='details-name'></h5>
+							<div class='step-filters right'>
+								<span class='info' alt='info' title='info'><i class='fa fa-info-circle'></i></span>
+								<span class='pass' alt='pass' title='pass'><i class='fa fa-check-circle-o'></i></span>
+								<span class='fail' alt='fail' title='fail'><i class='fa fa-times-circle-o'></i></span>
+								<span class='fatal' alt='fatal' title='fatal'><i class='fa fa-times-circle-o'></i></span>
+								<span class='error' alt='error' title='error'><i class='fa fa-exclamation-circle'></i></span>
+								<span class='warning' alt='warning' title='warning'><i class='fa fa-warning'></i></span>
+								<span class='skip' alt='skip' title='skip'><i class='fa fa-chevron-circle-right'></i></span>
+								<span class='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='fa fa-times'></i></span>
+							</div>
+							<div class='details-container'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /tests -->
+			
+			<!-- categories -->
+				<div id='categories-view' class='row _addedTable hide'>
+					<div class='col _addedCell1'>
+						<div class='contents'>
+							<div class='card-panel heading'>
+								<h5>Categories</h5>
+							</div>
+							<div class='card-panel filters'>
+								<div class='search' alt='Search tests' title='Search tests'>
+									<div class='input-field left'>
+										<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+									</div>
+									<i class='fa fa-search icon'></i>
+								</div>
+							</div>
+							<div class='card-panel no-padding-h no-padding-v'>
+								<div class='wrapper'>
+									<ul id='cat-collection' class='cat-collection'>
+											<li class='category-item displayed'>
+												<div class='cat-head'>
+													<span class='category-name'>AQ3.1-ReleaseCandidate.10-05-2017-10.144</span>
+												</div>
+												<div class='category-status-counts'>
+														<span class='pass label dot'>Pass: 21</span>
+														<span class='fail label dot'>Fail: 7</span>
+												</div>
+												<div class='cat-body'>
+													<div class='category-status-counts'>
+														<div class='button-group'>
+															<a href='#!' class='pass label filter'>Pass <span class='icon'>21</span></a>
+															<a href='#!' class='fail label filter'>Fail <span class='icon'>7</span></a>
+															<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+														</div>
+													</div>
+													<div class='cat-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:10:26</td>
+																		<td><span class='category-link linked' extentid='eb73f530-1c9a-4b60-8a52-03ceeb301602'>summaryReport_Default</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:10:49</td>
+																		<td><span class='category-link linked' extentid='29008959-e2f0-4cc0-8d63-60c0aa77f1c3'>summaryReport_Headers_And_DropDownList</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:12:05</td>
+																		<td><span class='category-link linked' extentid='d287ad0e-2fa6-4f72-ae91-6068133b7bfc'>summaryReport_Generation_Only_TagName</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:12:58</td>
+																		<td><span class='category-link linked' extentid='2b91215d-fe78-432d-b698-b53eab5e8985'>summaryReport_Vehicle_Tag_Package_disable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:15:16</td>
+																		<td><span class='category-link linked' extentid='e44bc305-0bdd-4fdc-945c-0b17183832fe'>summaryReport_Vehicle_Tag_Package_enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:17:13</td>
+																		<td><span class='category-link linked' extentid='8d4f0a37-7b4e-4884-ab85-70aa68ca8bf7'>summaryReport_SeatBlet_Package_disable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:18:56</td>
+																		<td><span class='category-link linked' extentid='683a0efd-65d5-434c-b530-a64b8e8f1c14'>summaryReport_SeatBelt_Package_enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:20:48</td>
+																		<td><span class='category-link linked' extentid='a0f1ee22-f33f-4675-9415-bbd69dfbf7a0'>summaryReportGeneration_Driver_Asset_Preference_Disabled</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:23:05</td>
+																		<td><span class='category-link linked' extentid='f83a2e70-aac5-4412-8cdf-95c7e45f407a'>summaryReportGeneration_Driver_Asset_Preference_Enabled</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:25:11</td>
+																		<td><span class='category-link linked' extentid='34e4e5f9-8c40-4d44-bb78-7628d75d4687'>summaryReport_FuelPackage_disable</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:26:47</td>
+																		<td><span class='category-link linked' extentid='40098f54-b88d-4cd3-979f-54a1b3b0ba9f'>summaryReport_FuelPackage_Enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:28:33</td>
+																		<td><span class='category-link linked' extentid='bcb7d521-1500-490b-9188-e4a88fc289d4'>SummaryReport_To_ActivityReport</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:29:07</td>
+																		<td><span class='category-link linked' extentid='0917171d-e88d-4d55-a403-2f42cba567cc'>SummaryReport_1YearsBack_data</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:29:28</td>
+																		<td><span class='category-link linked' extentid='b4b66190-2f64-4790-a6a9-bc6735040d1f'>SummaryReport_To_DriverScore</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:30:07</td>
+																		<td><span class='category-link linked' extentid='2db37ce4-fac0-428e-a2e3-3cf7910af9ad'>SummaryReport_Back_Button</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:30:40</td>
+																		<td><span class='category-link linked' extentid='09ddf0bc-ad8a-445e-92b5-80c60d48e30a'>SummaryReport_NewReport_Button</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:31:13</td>
+																		<td><span class='category-link linked' extentid='56c4ec67-274b-4ed2-a240-748e1db37de4'>SummaryReport_Generation_31days</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:31:36</td>
+																		<td><span class='category-link linked' extentid='b277820e-b6c6-4aab-a077-6ba2227e1a27'>SummaryReport_Generation_OneVehicle</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:33:26</td>
+																		<td><span class='category-link linked' extentid='ce2fde93-1a4f-4d49-a340-23b9fc6a94ed'>Summary_Fuel_Units_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:35:24</td>
+																		<td><span class='category-link linked' extentid='ede10ef5-604c-4cb2-b14e-b250ad65050e'>Summary_Distance_Unit_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:36:57</td>
+																		<td><span class='category-link linked' extentid='5ab80143-3326-4554-9626-263212ea04e3'>summary_Currency_Unit_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:37:55</td>
+																		<td><span class='category-link linked' extentid='6e157d6e-685f-475c-8b99-c21a97c31226'>SummaryReport_Generation_OneGroup</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:38:47</td>
+																		<td><span class='category-link linked' extentid='025c35ec-fce7-44db-88a2-3a383f6e3bea'>SummaryReport_Count_HB</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:39:43</td>
+																		<td><span class='category-link linked' extentid='ee172125-db46-489c-9134-95be19aafdfd'>SummaryReport_Count_HCB</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:40:55</td>
+																		<td><span class='category-link linked' extentid='b5b1d813-f355-4e16-b2fa-fc5a2aefea45'>SummaryReport_Count_SA</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:41:47</td>
+																		<td><span class='category-link linked' extentid='0c1182a0-5962-49ef-930b-c2cb52de043e'>SummaryReport_SppedingReport_VerifyCountOfSpeeding</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:42:36</td>
+																		<td><span class='category-link linked' extentid='0a28be77-aa88-4ada-bdee-3ced30f8e358'>Compare_DistanceTravelled_Between_Summary_And_Activity</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:43:54</td>
+																		<td><span class='category-link linked' extentid='5a969082-0b85-4337-8a67-908c670ba7a2'>SummaryReport_verifyDownloadOfXls</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+															<tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+											<li class='category-item displayed'>
+												<div class='cat-head'>
+													<span class='category-name'>Summary-Report</span>
+												</div>
+												<div class='category-status-counts'>
+														<span class='pass label dot'>Pass: 21</span>
+														<span class='fail label dot'>Fail: 7</span>
+												</div>
+												<div class='cat-body'>
+													<div class='category-status-counts'>
+														<div class='button-group'>
+															<a href='#!' class='pass label filter'>Pass <span class='icon'>21</span></a>
+															<a href='#!' class='fail label filter'>Fail <span class='icon'>7</span></a>
+															<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+														</div>
+													</div>
+													<div class='cat-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:10:26</td>
+																		<td><span class='category-link linked' extentid='eb73f530-1c9a-4b60-8a52-03ceeb301602'>summaryReport_Default</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:10:49</td>
+																		<td><span class='category-link linked' extentid='29008959-e2f0-4cc0-8d63-60c0aa77f1c3'>summaryReport_Headers_And_DropDownList</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:12:05</td>
+																		<td><span class='category-link linked' extentid='d287ad0e-2fa6-4f72-ae91-6068133b7bfc'>summaryReport_Generation_Only_TagName</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:12:58</td>
+																		<td><span class='category-link linked' extentid='2b91215d-fe78-432d-b698-b53eab5e8985'>summaryReport_Vehicle_Tag_Package_disable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:15:16</td>
+																		<td><span class='category-link linked' extentid='e44bc305-0bdd-4fdc-945c-0b17183832fe'>summaryReport_Vehicle_Tag_Package_enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:17:13</td>
+																		<td><span class='category-link linked' extentid='8d4f0a37-7b4e-4884-ab85-70aa68ca8bf7'>summaryReport_SeatBlet_Package_disable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:18:56</td>
+																		<td><span class='category-link linked' extentid='683a0efd-65d5-434c-b530-a64b8e8f1c14'>summaryReport_SeatBelt_Package_enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:20:48</td>
+																		<td><span class='category-link linked' extentid='a0f1ee22-f33f-4675-9415-bbd69dfbf7a0'>summaryReportGeneration_Driver_Asset_Preference_Disabled</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:23:05</td>
+																		<td><span class='category-link linked' extentid='f83a2e70-aac5-4412-8cdf-95c7e45f407a'>summaryReportGeneration_Driver_Asset_Preference_Enabled</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:25:11</td>
+																		<td><span class='category-link linked' extentid='34e4e5f9-8c40-4d44-bb78-7628d75d4687'>summaryReport_FuelPackage_disable</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:26:47</td>
+																		<td><span class='category-link linked' extentid='40098f54-b88d-4cd3-979f-54a1b3b0ba9f'>summaryReport_FuelPackage_Enable</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:28:33</td>
+																		<td><span class='category-link linked' extentid='bcb7d521-1500-490b-9188-e4a88fc289d4'>SummaryReport_To_ActivityReport</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:29:07</td>
+																		<td><span class='category-link linked' extentid='0917171d-e88d-4d55-a403-2f42cba567cc'>SummaryReport_1YearsBack_data</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:29:28</td>
+																		<td><span class='category-link linked' extentid='b4b66190-2f64-4790-a6a9-bc6735040d1f'>SummaryReport_To_DriverScore</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:30:07</td>
+																		<td><span class='category-link linked' extentid='2db37ce4-fac0-428e-a2e3-3cf7910af9ad'>SummaryReport_Back_Button</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:30:40</td>
+																		<td><span class='category-link linked' extentid='09ddf0bc-ad8a-445e-92b5-80c60d48e30a'>SummaryReport_NewReport_Button</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:31:13</td>
+																		<td><span class='category-link linked' extentid='56c4ec67-274b-4ed2-a240-748e1db37de4'>SummaryReport_Generation_31days</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:31:36</td>
+																		<td><span class='category-link linked' extentid='b277820e-b6c6-4aab-a077-6ba2227e1a27'>SummaryReport_Generation_OneVehicle</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:33:26</td>
+																		<td><span class='category-link linked' extentid='ce2fde93-1a4f-4d49-a340-23b9fc6a94ed'>Summary_Fuel_Units_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:35:24</td>
+																		<td><span class='category-link linked' extentid='ede10ef5-604c-4cb2-b14e-b250ad65050e'>Summary_Distance_Unit_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:36:57</td>
+																		<td><span class='category-link linked' extentid='5ab80143-3326-4554-9626-263212ea04e3'>summary_Currency_Unit_Prefrerences</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:37:55</td>
+																		<td><span class='category-link linked' extentid='6e157d6e-685f-475c-8b99-c21a97c31226'>SummaryReport_Generation_OneGroup</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:38:47</td>
+																		<td><span class='category-link linked' extentid='025c35ec-fce7-44db-88a2-3a383f6e3bea'>SummaryReport_Count_HB</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:39:43</td>
+																		<td><span class='category-link linked' extentid='ee172125-db46-489c-9134-95be19aafdfd'>SummaryReport_Count_HCB</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:40:55</td>
+																		<td><span class='category-link linked' extentid='b5b1d813-f355-4e16-b2fa-fc5a2aefea45'>SummaryReport_Count_SA</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2017-05-10 14:41:47</td>
+																		<td><span class='category-link linked' extentid='0c1182a0-5962-49ef-930b-c2cb52de043e'>SummaryReport_SppedingReport_VerifyCountOfSpeeding</span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:42:36</td>
+																		<td><span class='category-link linked' extentid='0a28be77-aa88-4ada-bdee-3ced30f8e358'>Compare_DistanceTravelled_Between_Summary_And_Activity</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2017-05-10 14:43:54</td>
+																		<td><span class='category-link linked' extentid='5a969082-0b85-4337-8a67-908c670ba7a2'>SummaryReport_verifyDownloadOfXls</span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+															<tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id='cat-details-wrapper' class='col _addedCell2'>
+						<div class='contents'>
+							<div class='card-panel details-view'>
+								<h5 class='cat-name'></h5>
+								<div class='cat-container'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- /categories -->
+			
+			<!-- exceptions -->
+			<!-- /exceptions -->
+			
+			<!-- testrunner logs -->
+			<!-- /testrunner logs -->
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- test dashboard counts setting -->
+		<div id='test-count-setting' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Configure Tests Count Setting</h5> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+				<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+				<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+				<label for='childNodes'>Child Tests Only</label> 
+			</div> 
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /test dashboard counts setting -->
+		
+		<!-- filter for step status -->
+		<div id='step-status-filter' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Select status</h5> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+				<label for='step-dashboard-filter-pass'>Pass</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+				<label for='step-dashboard-filter-fail'>Fail</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+				<label for='step-dashboard-filter-fatal'>Fatal</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+				<label for='step-dashboard-filter-error'>Error</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+				<label for='step-dashboard-filter-warning'>Warning</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+				<label for='step-dashboard-filter-skip'>Skipped</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+				<label for='step-dashboard-filter-info'>Info</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+				<label for='step-dashboard-filter-unknown'>Unknown</label> 
+			</div>
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /filter for step status -->
+		
+		<script type='text/javascript' src='./extentreports/js/scripts.js'></script>		
+		<script>jQuery(document).ready(function() { jQuery('.logo span').html('ExtentReports'); });</script>
+		<script>
+				
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>
